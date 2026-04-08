@@ -62,6 +62,30 @@
   color: var(--clr-text);
   font-family: var(--font-main);
 }
+.btnCartContainer{
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+.cartBnt{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.cartBnt button{
+  width: 49%;
+  margin-bottom: 5px;
+  background-color: var(--clr-white);
+  color: var(--clr-text);
+  border-color: var(--clr-accent);
+}
+.cartBnt button:hover{
+  border-color: var(--clr-accent);
+  width: 49%;
+  margin-bottom: 5px;
+  background-color: var(--clr-accent);
+  color: var(--clr-white);
+}
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {

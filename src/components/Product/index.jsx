@@ -1,11 +1,11 @@
 import { useDispatch } from 'react-redux';
 import Button from '../Button';
-import { addToCart } from '../../features/cart/cartSlice';
+import { addToCart, removeFromCart, incrementQty, decrementQty } from '../../features/cart/cartSlice';
 import styles from "./styles.module.css";
 
-const Product = ({ product }) => {
+const Product = ({ product, cartProduct }) => {
   const dispatch = useDispatch();
-  
+
   const { id, name, category, price, stock, image } = product;
 
   return (
@@ -18,7 +18,19 @@ const Product = ({ product }) => {
         <p className={styles.productCategory}>{category}</p>
         <p className={styles.productPrice}>${price}</p>
         <p className={styles.productStock}>In stock: {stock}</p>
-        <Button handelClick={() => dispatch(addToCart(product))} text="Add to Cart" />
+
+        {cartProduct ? <div className={styles.btnCartContainer}>
+          <div className={styles.cartBnt}>
+            <Button handelClick={() => dispatch(incrementQty(product))}
+              text="+" />
+            <Button handelClick={() => dispatch(decrementQty(product))}
+              text="-" /></div>
+          <Button handelClick={() => dispatch(removeFromCart(product))}
+            text="Delete" />
+        </div>
+          :
+          <Button handelClick={() => dispatch(addToCart(product))}
+            text="Add to Cart" />}
       </div>
     </div>
   );
