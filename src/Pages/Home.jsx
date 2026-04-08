@@ -11,7 +11,7 @@ export default function Home() {
 	const featureidProducts = useSelector(selectFeaturedProducts);
 
 	return (
-		<div className={styles.pageCOntainer}>
+		<div className={styles.pageContainer}>
 			<Header />
 			<div className={styles.featuredSection}>
 				<div className={styles.featured}>
