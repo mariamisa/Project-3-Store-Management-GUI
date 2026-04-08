@@ -1,0 +1,42 @@
+:root {
+  /* ===== LAYOUT ===== */
+  --layout-mobile: 375px;
+  --layout-desktop: 1440px;
+
+  /* ===== COLORS ===== */
+  --clr-primary: #333;
+  --clr-accent: hsl(9, 59%, 57%);
+  --clr-accent-hover: hsl(9, 62%, 52%);
+
+  --clr-text: #333;
+  --clr-text-light: #666;
+
+  --clr-white: #fff;
+  --clr-bg: #f5f5f5;
+  --clr-border: #e5e5e5;
+
+  /* ===== FONT ===== */
+  --font-main: 'Poppins', sans-serif;
+
+  /* ===== FONT SIZES ===== */
+  --fs-sm: 14px;
+  --fs-md: 16px;
+  --fs-lg: 20px;
+  --fs-xl: 28px;
+
+  /* ===== FONT WEIGHT ===== */
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-bold: 700;
+
+  /* ===== SPACING (مهم جدًا) ===== */
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+
+  /* ===== RADIUS ===== */
+  --radius: 12px;
+
+  /* ===== SHADOW ===== */
+  --shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}

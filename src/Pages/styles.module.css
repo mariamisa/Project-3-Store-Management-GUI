@@ -1,0 +1,25 @@
+.container {
+	border-radius: 5px;
+	width: 95%;
+	margin: 20px auto;
+}
+
+.pageContainer {
+	background-color: var(--clr-white);
+	border-radius: var(--radius);
+	margin-top: 15px;
+}
+
+.featuredSection {
+	border-radius: 0 0 var(--radius) var(--radius);
+	background-color: var(--clr-white);
+	padding: 0 var(--space-lg) 0 var(--space-md);
+	padding: var(--space-lg);
+}
+
+.featured {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	color: var(--clr-primary);
+}

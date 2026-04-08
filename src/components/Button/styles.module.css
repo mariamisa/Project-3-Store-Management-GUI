@@ -1,0 +1,32 @@
+.btn {
+  border-radius: var(--radius);
+  background-color: var(--clr-primary);
+  color: var(--clr-white);
+  font-family: var(--font-main);
+  font-weight: var(--fw-medium);
+
+  padding: var(--space-sm) var(--space-lg);
+
+  border: 2px solid var(--clr-primary);
+  cursor: pointer;
+  box-sizing: border-box;
+
+  transition: 0.3s ease;
+}
+
+.btn:hover {
+  background-color: var(--clr-white);
+  color: var(--clr-primary);
+  border-color: var(--clr-primary);
+}
+
+.btn--accent {
+  background-color: var(--clr-accent);
+  border-color: var(--clr-accent);
+  color: var(--clr-white);
+}
+
+.btn--accent:hover {
+  background-color: var(--clr-accent-hover);
+  border-color: var(--clr-accent-hover);
+}

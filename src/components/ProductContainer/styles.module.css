@@ -1,0 +1,22 @@
+.gridContainer {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); 
+  gap: var(--space-lg);
+  padding: var(--space-lg);
+}
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+  .gridContainer {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-md);
+    padding: var(--space-md);
+  }
+}
+
+@media (max-width: 768px) {
+  .gridContainer {
+    grid-template-columns: 1fr; 
+    gap: var(--space-md);
+    padding: var(--space-md);
+  }
+}

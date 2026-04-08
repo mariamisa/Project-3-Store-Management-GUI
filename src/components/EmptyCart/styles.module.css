@@ -1,0 +1,17 @@
+.emptyCart {
+  text-align: center;
+  padding: 50px;
+  font-family: var(--font-main);
+  color: var(--clr-text);
+  margin: auto
+}
+
+.emptyCart h2 {
+  font-size: var(--fs-lg);
+  margin-bottom: 15px;
+}
+
+.emptyCart p {
+  font-size: var(--fs-md);
+  color: var(--clr-text-light);
+}
