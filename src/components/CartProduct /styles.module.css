@@ -1,0 +1,89 @@
+.productCard {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+  background-color: var(--clr-white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 15px;
+  width: 100%;
+  margin: 10px auto;
+}
+
+.productImage {
+  width: 100px;
+  height: 100px;
+  flex-shrink: 0;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.productImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.productInfo {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.productName {
+  font-size: var(--fs-lg);
+  font-weight: var(--fw-bold);
+  color: var(--clr-text);
+}
+
+.productPrice {
+  font-size: var(--fs-md);
+  font-weight: var(--fw-bold);
+  color: var(--clr-accent);
+}
+
+.productStock {
+  font-size: var(--fs-xs);
+}
+
+.btnCartContainer {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+}
+
+.cartBnt {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  border: 2px solid var(--clr-text-light);
+  border-radius: var(--radius);
+}
+
+.cartCounter {
+  width: 35px;
+  text-align: center;
+  color: var(--clr-text);
+  font-weight: var(--fw-bold);
+}
+
+.btnCartContainer svg {
+  cursor: pointer;
+}
+
+.cartBnt {
+  padding: 5px 10px;
+}
+
+.cartBnt svg {
+  width: 20px;
+  height: 20px;
+}
+
+.btnCartContainer>svg {
+  width: 30px;
+  height: 30px;
+}

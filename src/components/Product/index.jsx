@@ -1,12 +1,12 @@
 import { useDispatch } from 'react-redux';
 import Button from '../Button';
-import { addToCart, removeFromCart, incrementQty, decrementQty } from '../../features/cart/cartSlice';
+import { addToCart } from '../../features/cart/cartSlice';
 import styles from "./styles.module.css";
 
-const Product = ({ product, cartProduct }) => {
+const Product = ({ product }) => {
   const dispatch = useDispatch();
 
-  const { id, name, price, category, image } = product;
+  const { id, name, price, stock, image } = product;
 
   return (
     <div className={styles.productCard} key={id}>
@@ -15,21 +15,11 @@ const Product = ({ product, cartProduct }) => {
       </div>
       <div className={styles.productInfo}>
         <h3 className={styles.productName}>{name}</h3>
-        <p className={styles.productCategory}>{category}</p>
         <p className={styles.productPrice}>${price}</p>
+        <p className={styles.productStock}>In Stock: {stock}</p>
 
-        {cartProduct ? <div className={styles.btnCartContainer}>
-          <div className={styles.cartBnt}>
-            <Button handelClick={() => dispatch(incrementQty(product))}
-              text="+" />
-            <Button handelClick={() => dispatch(decrementQty(product))}
-              text="-" /></div>
-          <Button handelClick={() => dispatch(removeFromCart(product))}
-            text="Delete" />
-        </div>
-          :
-          <Button handelClick={() => dispatch(addToCart(product))}
-            text="Add to Cart" />}
+        <Button handelClick={() => dispatch(addToCart(product))}
+          text="Add to Cart" />
       </div>
     </div>
   );

@@ -5,7 +5,8 @@ const initialState = {
   products: productsData,
   searchValue: "",
   category: 'All',
-  sortBy: "default"
+  sortBy: "default",
+  cart: []
 };
 
 const productsSlice = createSlice({
@@ -20,10 +21,20 @@ const productsSlice = createSlice({
     },
     setSortBy: (state, action) => {
       state.sortBy = action.payload
+    },
+
+    purchase: (state, action) => {
+      const cart = action.payload;
+      cart.forEach(({ id, quantity }) => {
+        const product = state.products.find(p => p.id === id);
+        if (product) {
+          product.stock -= quantity;
+        }
+      });
     }
   },
 });
 
-export const { setSearchValue, setCategory, setSortBy } = productsSlice.actions
+export const { setSearchValue, setCategory, setSortBy, purchase } = productsSlice.actions
 
 export default productsSlice.reducer;

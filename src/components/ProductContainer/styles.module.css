@@ -4,9 +4,15 @@
   gap: var(--space-lg);
   padding: var(--space-lg);
 }
-/* ===== RESPONSIVE ===== */
+.gridContainerCart {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+  gap: var(--space-lg);
+  padding: var(--space-lg);
+}
+
 @media (max-width: 1024px) {
-  .gridContainer {
+  .gridContainer ,.gridContainerCart{
     grid-template-columns: repeat(2, 1fr);
     gap: var(--space-md);
     padding: var(--space-md);

@@ -58,8 +58,8 @@
 }
 
 .productStock {
-  font-size: var(--fs-sm);
-  color: var(--clr-text);
+  font-size: var(--fs-xs);
+  color: var(--clr-text-light);
   font-family: var(--font-main);
 }
 .btnCartContainer{

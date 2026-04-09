@@ -34,7 +34,10 @@
 	color: var(--clr-text);
 }
 
-/* ===== RESPONSIVE ===== */
+.pageTitle {
+	color: var(--clr-primary);
+}
+
 @media (max-width: 768px) {
 	.headerContainer {
 		height: 300px;
@@ -52,5 +55,8 @@
 
 	.description {
 		margin-bottom: var(--space-md);
+	}
+	.pageTitle{
+		font-size: var(--fs-lg);
 	}
 }

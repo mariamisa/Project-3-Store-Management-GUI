@@ -19,6 +19,7 @@
   --font-main: 'Poppins', sans-serif;
 
   /* ===== FONT SIZES ===== */
+  --fs-xs: 12px;
   --fs-sm: 14px;
   --fs-md: 16px;
   --fs-lg: 20px;
