@@ -87,7 +87,6 @@
   color: var(--clr-white);
 }
 
-/* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
   .productCard {
     flex: 1 1 100%;

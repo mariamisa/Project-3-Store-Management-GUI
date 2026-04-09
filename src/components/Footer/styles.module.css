@@ -14,7 +14,6 @@
   gap: var(--space-md);
 }
 
-/* ===== Sections ===== */
 .section1 {
   text-align: left;
 }
@@ -23,14 +22,12 @@
   text-align: center;
 }
 
-/* ===== Text Container ===== */
 .textContainer {
   background-color: rgba(255, 255, 255, 0.1);
   padding: var(--space-lg);
   border-radius: var(--radius);
 }
 
-/* ===== Typography ===== */
 .title {
   font-size: var(--fs-xl);
   font-weight: var(--fw-bold);
@@ -51,7 +48,6 @@
   padding-left: var(--space-sm);
 }
 
-/* ===== Social Media ===== */
 .socialMedia {
   display: flex;
   justify-content: space-between;
@@ -59,7 +55,6 @@
   width: 200px;
 }
 
-/* ================= RESPONSIVE ================= */
 @media (max-width: 768px) {
   .footer {
     flex-direction: column;

@@ -23,7 +23,6 @@
   box-shadow: 0 0 4px var(--clr-text-light);
 }
 
-/* Hover */
 .dropdown:hover {
   border-color: var(--clr-text-light);
 }
@@ -52,7 +51,6 @@
   pointer-events: none;
 }
 
-/* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
   .container {
     width: 100%;
