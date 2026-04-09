@@ -4,7 +4,7 @@ import { sortFunctions } from '../../helper'
 
 export const selectProductsState = (state) => state.products;
 
-export const selectAllProducts = (state) => state.products.products;
+export const selectAllProducts = (state) => state.products.products.filter(el => el.stock);
 
 export const selectSearchValue = (state) => state.products.searchValue;
 
@@ -14,7 +14,7 @@ export const selectSortBy = (state) => state.products.sortBy;
 
 export const selectAllCategories = createSelector(
 	[selectAllProducts],
-	( products ) => {
+	(products) => {
 		const categories = products.map(el => el.category);
 		return ["All", ...new Set(categories)];
 	}
@@ -22,7 +22,7 @@ export const selectAllCategories = createSelector(
 
 export const selectFilteredProducts = createSelector(
 	[selectAllProducts, selectSearchValue, selectCategory, selectSortBy],
-	(products, searchValue, category, sortBy ) => {
+	(products, searchValue, category, sortBy) => {
 		let result = products;
 
 		if (searchValue && searchValue.trim() !== "") {

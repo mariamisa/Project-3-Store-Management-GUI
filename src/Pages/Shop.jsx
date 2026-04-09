@@ -15,21 +15,23 @@ export default function Shop() {
 	const { products, category, sortValue } = useSelector(selectProductsState);
 	const filteredProducts = useSelector(selectFilteredProducts);
 
-	const data = filteredProducts.filtered
+	const availableProducts = (filteredProducts.filtered
 		? filteredProducts.data
-		: products
+		: products).filter(el => el.stock)
+
+	const productsNumber = availableProducts.length;
 
 	return (
 		<div className={styles.pageContainer}>
 			<div className={styles.pageTitleContainer}>
-				<PageTitle text={"Shop"} />
-				{data.length > 0 && <p className={styles.itemNumber}>Showing {data.length} Products</p>}
+				<PageTitle text="Shop" />
+				{productsNumber > 0 && <p className={styles.itemNumber}>Showing {productsNumber} Products</p>}
 			</div>
-			<div className={styles.filterContainer}>
+			{productsNumber > 0 && <div className={styles.filterContainer}>
 				<CategoryFilter setCategory={(e) => dispatch(setCategory(e))} category={category} />
 				<SortDropdown setSort={(e) => dispatch(setSortBy(e))} sortValue={sortValue} />
-			</div>
-			<ProductsContainer products={data} />
+			</div>}
+			<ProductsContainer products={availableProducts} />
 		</div>
 	)
 }
