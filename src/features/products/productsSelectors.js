@@ -1,5 +1,7 @@
 import { createSelector } from '@reduxjs/toolkit';
 
+import { sortFunctions } from '../../helper'
+
 export const selectProductsState = (state) => state.products;
 
 export const selectAllProducts = (state) => state.products.products;
@@ -10,43 +12,45 @@ export const selectCategory = (state) => state.products.category;
 
 export const selectSortBy = (state) => state.products.sortBy;
 
-export const selectAllCategories = (state) => ["All", ...new Set(state.products.products.map(el => el.category))];
+export const selectAllCategories = createSelector(
+	[selectAllProducts],
+	( products ) => {
+		const categories = products.map(el => el.category);
+		return ["All", ...new Set(categories)];
+	}
+);
 
 export const selectFilteredProducts = createSelector(
-	[selectProductsState],
-	({ products, searchValue, category, sortBy }) => {
+	[selectAllProducts, selectSearchValue, selectCategory, selectSortBy],
+	(products, searchValue, category, sortBy ) => {
 		let result = products;
 
 		if (searchValue && searchValue.trim() !== "") {
-			result = result.filter((el) => el.name.toLowerCase().includes(searchValue));
+			const lower = searchValue.toLowerCase();
+			result = result.filter((el) =>
+				el.name.toLowerCase().includes(lower)
+			);
 		}
 
 		if (category && category !== 'All') {
 			result = result.filter((el) => el.category === category);
 		}
 
-		if (sortBy !== "default") {
-			if (sortBy === "alpha") {
-				result = [...result].sort((a, b) => a.name.localeCompare(b.name));
-			} else {
-				result = [...result].sort((a, b) => (sortBy === "low" ? a.price - b.price : b.price - a.price));
-			}
+		if (sortBy && sortBy !== "default" && sortFunctions[sortBy]) {
+			result = [...result].sort(sortFunctions[sortBy]);
 		}
 
 		return {
 			data: result,
-			filtered: !!searchValue || (category && category !== 'All' || sortBy !== "default"),
+			filtered:
+				!!searchValue ||
+				(category && category !== 'All') ||
+				(sortBy && sortBy !== "default"),
 		};
 	}
 );
 
-export const selectFeaturedProducts = (state) => {
-	const allProducts = [...state.products.products];
-
-	for (let i = allProducts.length - 1; i > 0; i--) {
-		const j = Math.floor(Math.random() * (i + 1));
-		[allProducts[i], allProducts[j]] = [allProducts[j], allProducts[i]];
-	}
-
-	return allProducts.slice(0, 4);
-};
+export const selectFeaturedProducts = createSelector(
+	[selectAllProducts],
+	(products) => products.slice(0, 4)
+);

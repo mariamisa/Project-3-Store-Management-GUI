@@ -4,7 +4,7 @@ import CategoryFilter from '../components/Filters/CategoryFilter'
 import SortDropdown from '../components/Filters/SortDropdown'
 
 import { setCategory, setSortBy } from '../features/products/productsSlice';
-import { selectAllProducts, selectFilteredProducts, selectCategory, selectSortBy } from '../features/products/productsSelectors';
+import { selectProductsState, selectFilteredProducts } from '../features/products/productsSelectors';
 import ProductsContainer from '../components/ProductContainer';
 
 import styles from './styles.module.css'
@@ -12,9 +12,7 @@ import PageTitle from '../components/Header/Title';
 
 export default function Shop() {
 	const dispatch = useDispatch()
-	const products = useSelector(selectAllProducts);
-	const category = useSelector(selectCategory);
-	const sortValue = useSelector(selectSortBy);
+	const { products, category, sortValue } = useSelector(selectProductsState);
 	const filteredProducts = useSelector(selectFilteredProducts);
 
 	const data = filteredProducts.filtered
