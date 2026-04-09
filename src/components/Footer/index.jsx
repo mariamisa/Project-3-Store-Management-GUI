@@ -5,7 +5,6 @@ import Instagram from '../../svg/instagram'
 import TicToc from '../../svg/tictoc'
 import X from '../../svg/x'
 
-
 import styles from './styles.module.css'
 
 export default function Footer() {
@@ -24,10 +23,10 @@ export default function Footer() {
 			<div className={styles.section2}>
 				<p>Follow Us</p>
 				<div className={styles.socialMedia}>
-					<Facebook {...size} />
-					<TicToc {...size} />
-					<Instagram {...size} />
-					<X {...size} />
+					<a href='https://www.facebook.com' target="_blank" rel="noopener noreferrer"><Facebook {...size} /></a>
+					<a href='https://www.tiktok.com/' target="_blank" rel="noopener noreferrer"><TicToc {...size} /></a>
+					<a href='https://www.instagram.com/' target="_blank" rel="noopener noreferrer"><Instagram {...size} /></a>
+					<a href='https://x.com/' target="_blank" rel="noopener noreferrer"><X {...size} /></a>
 				</div>
 			</div>
 		</div>

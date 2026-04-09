@@ -38,6 +38,24 @@
 	color: var(--clr-primary);
 }
 
+.flex {
+	display: flex;
+	gap: 10px;
+	justify-content: center;
+}
+
+.btn {
+	background-color: var(--clr-white);
+	color: var(--clr-primary);
+	border-color: var(--clr-primary);
+}
+
+.btn:hover {
+	background-color: var(--clr-primary);
+	color: var(--clr-white);
+}
+
+
 @media (max-width: 768px) {
 	.headerContainer {
 		height: 300px;

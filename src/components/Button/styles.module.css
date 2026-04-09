@@ -19,14 +19,3 @@
   color: var(--clr-primary);
   border-color: var(--clr-primary);
 }
-
-.btn--accent {
-  background-color: var(--clr-accent);
-  border-color: var(--clr-accent);
-  color: var(--clr-white);
-}
-
-.btn--accent:hover {
-  background-color: var(--clr-accent-hover);
-  border-color: var(--clr-accent-hover);
-}
