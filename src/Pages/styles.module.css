@@ -5,9 +5,11 @@
 }
 
 .pageContainer {
+	padding-bottom: 10px;
 	background-color: var(--clr-white);
 	border-radius: var(--radius);
 	margin-top: 15px;
+	min-height: 400px;
 }
 
 .featuredSection {
@@ -23,8 +25,48 @@
 	align-items: center;
 	color: var(--clr-primary);
 }
-.filterContainer{
+
+.filterContainer {
 	padding: 20px;
 	display: flex;
+	align-items: center;
 	gap: 10px;
+}
+
+.pageTitleContainer {
+	padding: 20px 20px 0px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.itemNumber {
+	color: var(--clr-text-light);
+}
+
+.total {
+	color: var(--clr-text-light);
+	font-size: var(--fs-sm);
+}
+
+.totalPrice {
+	color: var(--clr-text);
+	font-size: var(--fs-lg);
+	font-weight: var(--fw-bold);
+}
+
+.secondaryBtn {
+	background-color: var(--clr-accent);
+	border: 1px solid var(--clr-accent);
+	width: 250px;
+	margin-top: 10px;
+}
+
+.secondaryBtn:hover {
+	color: var(--clr-accent);
+	border: 1px solid var(--clr-accent);
+}
+
+.footerCart {
+	padding: 20px;
 }
