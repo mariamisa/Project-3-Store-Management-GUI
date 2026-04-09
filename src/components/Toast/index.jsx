@@ -4,7 +4,7 @@ import styles from "./styles.module.css";
 const Toast = ({
 	message,
 	type = "success",
-	duration = 3000,
+	duration = 2000,
 	onClose,
 }) => {
 	const [visible, setVisible] = useState(true);
@@ -16,6 +16,10 @@ const Toast = ({
 			setTimeout(() => {
 				onClose && onClose();
 			}, 300);
+
+			() => {
+				setVisible(false)
+			}
 		}, duration);
 
 		return () => clearTimeout(timer);
@@ -23,9 +27,8 @@ const Toast = ({
 
 	return (
 		<div
-			className={`${styles.toast} ${styles[type]} ${
-				!visible ? styles.hide : ""
-			}`}
+			className={`${styles.toast} ${styles[type]} ${!visible ? styles.hide : ""
+				}`}
 		>
 			<span>{message}</span>
 			<button onClick={() => setVisible(false)}>×</button>

@@ -1,27 +1,37 @@
+import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux'
-
-import ProductsContainer from '../components/ProductContainer';
-import EmptyCart from '../components/EmptyCart';
 
 import { selectCartItems, selectCartTotalPrice, selectCartCount } from '../features/cart/cartSelectors'
 import { clearCart } from '../features/cart/cartSlice';
 import { purchase } from '../features/products/productsSlice'
 
-import styles from './styles.module.css';
+import ProductsContainer from '../components/ProductContainer';
+import EmptyCart from '../components/EmptyCart';
 import PageTitle from '../components/Header/Title';
 import Button from '../components/Button';
+import Toast from '../components/Toast';
+
+import styles from './styles.module.css';
 
 export default function Cart() {
 	const dispatch = useDispatch();
 	const products = useSelector(selectCartItems);
 	const totalPrice = useSelector(selectCartTotalPrice);
 	const cartCount = useSelector(selectCartCount)
+	const [toast, setToast] = useState()
 
 	const formattedPrice = totalPrice.toFixed(2);
 
 	const handelPurchase = () => {
-		dispatch(purchase(products.map(({ id, quantity }) => ({ id, quantity }))))
-		dispatch(clearCart())
+		try {
+			dispatch(purchase(products.map(({ id, quantity }) => ({ id, quantity }))))
+			dispatch(clearCart())
+			setToast({ msg: "Purchased successfully", status: "success" })
+			// eslint-disable-next-line no-unused-vars
+		} catch (e) {
+			setToast({ msg: "Something went wrong", status: "error" })
+
+		}
 	}
 
 	return (
@@ -39,6 +49,13 @@ export default function Cart() {
 					</div>
 				</>
 				: <EmptyCart />}
+			{toast && (
+				<Toast
+					message={toast.msg}
+					type={toast.status}
+					onClose={() => setToast(null)}
+				/>
+			)}
 		</div>
 	)
 }
