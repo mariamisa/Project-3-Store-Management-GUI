@@ -52,7 +52,7 @@
 
 .productPrice {
   font-size: var(--fs-md);
-  font-weight: var(--fw-medium);
+  font-weight: var(--fw-bold);
   color: var(--clr-accent);
   font-family: var(--font-main);
 }

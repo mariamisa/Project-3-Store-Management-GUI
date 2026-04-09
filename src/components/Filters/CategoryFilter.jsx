@@ -1,8 +1,20 @@
-import React from 'react'
-// import styles from './styles.module.css'
+import { useSelector } from "react-redux"
 
-export default function CategoryFilter() {
+import Dropdown from '../Dropdown'
+import { selectAllCategories } from '../../features/products/productsSelectors'
+
+
+export default function CategoryFilter({ setCategory, category }) {
+	const categories = useSelector(selectAllCategories)
+	
 	return (
-		<div>CategoryFilter</div>
+		<Dropdown
+			id="category"
+			value={category || "All"}
+			onChange={setCategory}
+			options={categories}
+			defaultValue="All"
+			defaultValueLabel="All Categories"
+		/>
 	)
 }

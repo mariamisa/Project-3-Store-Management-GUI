@@ -1,17 +1,16 @@
-import { useState } from "react";
-import { FiSearch } from "react-icons/fi";
+import SearchIcon from '../../svg/search'
 import styles from './styles.module.css'
 
-export default function SearchBar() {
-	const [query, setQuery] = useState("");
+export default function SearchBar({ onSearch, query="" }) {
 
 	const handleChange = (e) => {
-		setQuery(e.target.value);
-		// if (onSearch) onSearch(e.target.value);
+		const query = e.target.value?.toLowerCase()?.trim();
+		onSearch(query);
 	};
+
 	return (
 		<div className={styles["search-container"]}>
-			<FiSearch className={styles["search-icon"]} />
+			<SearchIcon className={styles["search-icon"]} />
 			<input
 				type="text"
 				placeholder="Search products..."

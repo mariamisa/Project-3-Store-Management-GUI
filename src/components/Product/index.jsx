@@ -6,7 +6,7 @@ import styles from "./styles.module.css";
 const Product = ({ product, cartProduct }) => {
   const dispatch = useDispatch();
 
-  const { id, name, category, price, stock, image } = product;
+  const { id, name, price, category, image } = product;
 
   return (
     <div className={styles.productCard} key={id}>
@@ -17,7 +17,6 @@ const Product = ({ product, cartProduct }) => {
         <h3 className={styles.productName}>{name}</h3>
         <p className={styles.productCategory}>{category}</p>
         <p className={styles.productPrice}>${price}</p>
-        <p className={styles.productStock}>In stock: {stock}</p>
 
         {cartProduct ? <div className={styles.btnCartContainer}>
           <div className={styles.cartBnt}>
