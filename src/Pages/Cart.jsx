@@ -4,12 +4,12 @@ import ProductsContainer from '../components/ProductContainer';
 import EmptyCart from '../components/EmptyCart';
 
 import { selectCartItems, selectCartTotalPrice, selectCartCount } from '../features/cart/cartSelectors'
+import { clearCart } from '../features/cart/cartSlice';
 import { purchase } from '../features/products/productsSlice'
 
 import styles from './styles.module.css';
 import PageTitle from '../components/Header/Title';
 import Button from '../components/Button';
-import { clearCart } from '../features/cart/cartSlice';
 
 export default function Cart() {
 	const dispatch = useDispatch();
