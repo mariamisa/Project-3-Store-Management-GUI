@@ -38,7 +38,7 @@ export default function Cart() {
 		<div className={styles.pageContainer}>
 			<div className={styles.pageTitleContainer}>
 				<PageTitle text={`Cart (${cartCount})`} />
-				<p className={styles.total}>Your Total Price is: ${formattedPrice}</p>
+				{products.length > 0 && <p className={styles.total}>Your Total Price is: ${formattedPrice}</p>}
 			</div>
 			{products.length > 0 ?
 				<>
