@@ -114,4 +114,8 @@
 	.itemNumber {
 		font-size: var(--fs-xs);
 	}
+
+	.total {
+		font-size: var(--fs-xs);
+	}
 }
