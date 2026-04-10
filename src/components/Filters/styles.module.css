@@ -10,7 +10,6 @@
   border-radius: var(--radius);
   outline: none;
   font-size: var(--fs-sm);
-  font-family: var(--font-main);
   color: var(--clr-text);
   background-color: var(--clr-white);
   transition: all 0.25s ease;

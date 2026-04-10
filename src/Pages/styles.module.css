@@ -37,11 +37,12 @@
 .pageTitleContainer {
 	padding: 20px 20px 0px;
 	display: flex;
-	align-items: center;
+	align-items: baseline;
 	justify-content: space-between;
 }
 
 .itemNumber {
+	font-size: var(--fs-sm);
 	color: var(--clr-text-light);
 }
 
@@ -76,7 +77,6 @@
 	padding: var(--space-lg);
 	display: flex;
 	justify-content: space-between;
-	/* align-items: center; */
 	gap: 20px;
 }
 
@@ -109,5 +109,9 @@
 		line-height: 30px;
 		text-align: left;
 		font-size: var(--fs-md);
+	}
+
+	.itemNumber {
+		font-size: var(--fs-xs);
 	}
 }

@@ -1,16 +1,15 @@
 .container {
   position: relative;
-  width: 220px;
+  width: 250px;
 }
 
 .dropdown {
   width: 100%;
-  padding: 10px 40px 10px 15px;
+  padding: 10px 15px;
   border-radius: var(--radius);
   border: 1px solid var(--clr-border);
   background-color: var(--clr-white);
   font-size: var(--fs-sm);
-  font-family: var(--font-main);
   color: var(--clr-text);
   cursor: pointer;
   appearance: none;
@@ -29,8 +28,6 @@
 
 
 .dropdown option {
-  font-family: var(--font-main);
-  font-size: var(--fs-sm);
   color: var(--clr-text);
   background-color: var(--clr-white);
 }
@@ -46,7 +43,6 @@
   right: var(--space-sm);
   top: 50%;
   transform: translateY(-50%);
-  font-size: 15px;
   color: var(--clr-text-light);
   pointer-events: none;
 }
@@ -54,10 +50,12 @@
 @media (max-width: 768px) {
   .container {
     width: 100%;
+    font-size: var(--fs-xs);
   }
 
   .dropdown {
     padding: 10px 35px 10px 12px;
+    font-size: var(--fs-xs);
   }
 
   .container::after {
