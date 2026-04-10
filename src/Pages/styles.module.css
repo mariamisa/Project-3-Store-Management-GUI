@@ -2,6 +2,7 @@
 	border-radius: 5px;
 	width: 95%;
 	margin: 20px auto;
+	font-family: var(--font-main);
 }
 
 .pageContainer {
@@ -68,5 +69,45 @@
 }
 
 .footerCart {
-	padding: 20px;
+	padding: var(--space-lg);
+}
+
+.section1 {
+	padding: var(--space-lg);
+	display: flex;
+	justify-content: space-between;
+	/* align-items: center; */
+	gap: 20px;
+}
+
+.section1 img {
+	width: 400px;
+	object-fit: cover;
+	border-radius: var(--radius);
+}
+
+.section1 p {
+	letter-spacing: 1px;
+	line-height: 40px;
+	text-align: justify;
+	color: var(--clr-text);
+	font-weight: var(--fw-medium);
+	font-size: var(--fs-md);
+}
+
+.section2 {
+	padding: var(--space-lg);
+}
+
+@media (max-width: 768px) {
+	.section1 img {
+		display: none;
+	}
+
+	.section1 p {
+		letter-spacing: 1px;
+		line-height: 30px;
+		text-align: left;
+		font-size: var(--fs-md);
+	}
 }

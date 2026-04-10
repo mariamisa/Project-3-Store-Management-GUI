@@ -32,10 +32,12 @@
 .description {
 	margin-bottom: var(--space-lg);
 	color: var(--clr-text);
+	font-size: var(--fs-lg);
 }
 
 .pageTitle {
 	color: var(--clr-primary);
+	font-size: var(--fs-lg);
 }
 
 .flex {
@@ -67,14 +69,21 @@
 	}
 
 	.title {
-		font-size: 28px;
+		font-size: var(--fs-lg);
 		line-height: 32px;
 	}
 
 	.description {
 		margin-bottom: var(--space-md);
+		font-size: var(--fs-md);
 	}
-	.pageTitle{
-		font-size: var(--fs-lg);
+
+	.pageTitle {
+		font-size: var(--fs-md);
+	}
+
+	.flex {
+		flex-direction: column;
+		font-size: var(--fs-sm);
 	}
 }

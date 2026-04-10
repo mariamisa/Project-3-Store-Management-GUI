@@ -19,7 +19,7 @@ body {
   /* 4. Improve text rendering */
   -webkit-font-smoothing: antialiased;
   background-color:rgb(232, 229, 225);
-  font-family: sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 /* 5. Improve media defaults */
 img, picture, video, canvas, svg {

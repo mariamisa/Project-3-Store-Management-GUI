@@ -1,6 +1,7 @@
 import { useSelector } from 'react-redux'
 
 import Header from '../components/Header'
+import PageTitle from '../components/Header/Title'
 import Link from '../components/Navbar/Link'
 import ProductsContainer from '../components/ProductContainer'
 import { selectFeaturedProducts, selectFilteredProducts } from '../features/products/productsSelectors'
@@ -16,8 +17,8 @@ export default function Home() {
 			<Header />
 			<div className={styles.featuredSection}>
 				<div className={styles.featured}>
-					<h2>Featured Picks</h2>
-					<Link className={styles.link} to="/shop" text=" view all" />
+					<PageTitle text={"Featured Picks"}/>
+						<Link className={styles.link} to="/shop" text=" view all" />
 				</div>
 				<ProductsContainer
 					products={filteredProducts.filtered

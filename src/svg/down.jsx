@@ -1,0 +1,15 @@
+import * as React from "react";
+const SVGComponent = (props) => (
+  <svg
+    fill="#333"
+    width="20px"
+    height="20px"
+    viewBox="-1 0 19 19"
+    xmlns="http://www.w3.org/2000/svg"
+    className="cf-icon-svg"
+    {...props}
+  >
+    <path d="M8.5 15.313a1.026 1.026 0 0 1-.728-.302l-6.8-6.8a1.03 1.03 0 0 1 1.455-1.456L8.5 12.828l6.073-6.073a1.03 1.03 0 0 1 1.455 1.456l-6.8 6.8a1.026 1.026 0 0 1-.728.302z" />
+  </svg>
+);
+export default SVGComponent;

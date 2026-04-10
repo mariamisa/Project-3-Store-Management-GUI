@@ -100,4 +100,7 @@
   .productImage {
     height: 180px;
   }
+  .productName {
+  font-size: var(--fs-sm);
+}
 }

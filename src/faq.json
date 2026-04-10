@@ -1,0 +1,28 @@
+{
+  "faq": [
+    {
+      "question": "What makes your brand different?",
+      "answer": "We focus on combining comfort, quality, and modern fashion trends to create clothing that feels as good as it looks."
+    },
+    {
+      "question": "What type of clothing do you offer?",
+      "answer": "We offer a variety of clothing including casual wear, streetwear, and everyday essentials designed for both comfort and style."
+    },
+    {
+      "question": "How do you choose your products?",
+      "answer": "Each item is carefully selected based on quality, durability, and current fashion trends to ensure the best value for our customers."
+    },
+    {
+      "question": "Do you follow fashion trends?",
+      "answer": "Yes, we constantly update our collections to stay aligned with modern trends while also offering timeless essentials."
+    },
+    {
+      "question": "Is your clothing affordable?",
+      "answer": "We aim to provide high-quality clothing at fair and accessible prices for everyone."
+    },
+    {
+      "question": "Can I return or exchange items?",
+      "answer": "Yes, we offer easy returns and exchanges within a specified period to ensure customer satisfaction."
+    }
+  ]
+}
