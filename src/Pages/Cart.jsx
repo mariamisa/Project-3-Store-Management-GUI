@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux'
 
 import { selectCartItems, selectCartTotalPrice, selectCartCount } from '../features/cart/cartSelectors'
@@ -19,14 +20,16 @@ export default function Cart() {
 	const totalPrice = useSelector(selectCartTotalPrice);
 	const cartCount = useSelector(selectCartCount)
 	const [toast, setToast] = useState()
+	const [purchaseMessage, setPurchaseMessage] = useState(false)
 
 	const formattedPrice = totalPrice.toFixed(2);
 
 	const handelPurchase = () => {
 		try {
 			dispatch(purchase(products.map(({ id, quantity }) => ({ id, quantity }))))
-			dispatch(clearCart())
 			setToast({ msg: "Purchased successfully", status: "success" })
+			dispatch(clearCart())
+			setPurchaseMessage(true)
 			// eslint-disable-next-line no-unused-vars
 		} catch (e) {
 			setToast({ msg: "Something went wrong", status: "error" })
@@ -40,15 +43,19 @@ export default function Cart() {
 				<PageTitle text={`Cart (${cartCount})`} />
 				{products.length > 0 && <p className={styles.total}>Your Total Price is: ${formattedPrice}</p>}
 			</div>
-			{products.length > 0 ?
-				<>
-					<ProductsContainer cartProduct products={products} />
-					<div className={styles.footerCart}>
-						<p className={styles.totalPrice}>SubTotal: {totalPrice > 0 && `$${formattedPrice}`} </p>
-						<Button className={styles.secondaryBtn} text={"Purchase"} onClick={handelPurchase} />
-					</div>
-				</>
-				: <EmptyCart />}
+			{purchaseMessage ?
+				<div className={styles.purchaseMessage}>
+					<p>Purchase successfully go to <Link to={"/"}>Home</Link> Page.</p>
+				</div> :
+				products.length > 0 ?
+					<>
+						<ProductsContainer cartProduct products={products} />
+						<div className={styles.footerCart}>
+							<p className={styles.totalPrice}>SubTotal: {totalPrice > 0 && `$${formattedPrice}`} </p>
+							<Button className={styles.secondaryBtn} text={"Purchase"} onClick={handelPurchase} />
+						</div>
+					</>
+					: <EmptyCart />}
 			{toast && (
 				<Toast
 					message={toast.msg}

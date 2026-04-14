@@ -99,6 +99,11 @@
 	padding: var(--space-lg);
 }
 
+.purchaseMessage {
+	font-size: var(--fs-md);
+	padding: var(--space-lg);
+}
+
 @media (max-width: 768px) {
 	.section1 img {
 		display: none;
@@ -117,5 +122,13 @@
 
 	.total {
 		font-size: var(--fs-xs);
+	}
+
+	.purchaseMessage {
+		font-size: var(--fs-xs);
+	}
+
+	.pageContainer {
+		min-height: 150px;
 	}
 }
