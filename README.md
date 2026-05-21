@@ -59,8 +59,7 @@ This project was built to practice and demonstrate:
 ---
 
 ## 📸 Screenshots
-(<img width="1920" height="1562" alt="screencapture-store-mariam-netlify-app-2026-05-21-14_55_31" src="https://github.com/user-attachments/assets/b6327f69-7258-4121-b4e1-33d7c61c4df6" />
-)
+<img width="1920" height="1562" alt="screencapture-store-mariam-netlify-app-2026-05-21-14_55_31" src="https://github.com/user-attachments/assets/b6327f69-7258-4121-b4e1-33d7c61c4df6" />
 
 ---
 
